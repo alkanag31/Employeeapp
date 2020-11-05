@@ -108,7 +108,7 @@ public class EmployeeControllerTest {
 			MvcResult result=mockMvc.perform(requestBuilder).andReturn();
 			MockHttpServletResponse response=result.getResponse();     
 			String output=response.getContentAsString();         	
-			assertThat(output).isEqualTo(input);           
+			assertThat(output).isEqualTo("Employee deleted");           
 	   
 	   }
 	   
@@ -125,7 +125,7 @@ public class EmployeeControllerTest {
 	   		MvcResult result=mockMvc.perform(requestBuilder).andReturn();
 	   		MockHttpServletResponse response=result.getResponse();    
 	   		String output=response.getContentAsString();
-	   		assertThat(output).isEqualTo(input);           
+	   		assertThat(output).isEqualTo("Employee updated");           
 	   }
 
     /**
