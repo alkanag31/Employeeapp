@@ -69,34 +69,41 @@
 		</dependency>
 	</dependencies>
 	
-	<distributionManagement>
-    <repository>
-        <uniqueVersion>false</uniqueVersion>
-        <id>myMavenRepo.write</id>
-        <name>Corporate Repository</name>
-        <url>https://mymavenrepo.com/repo/eZX3rdgpo4tBZtWLgmwy/</url>
-        <layout>default</layout>
-    </repository>
-</distributionManagement>
-	<repositories>  
-      <repository>
-         <id>myMavenRepo.read</id>
-         <url>https://mymavenrepo.com/repo/SvH1KxEjWYHoftyS5cH9/</url>
-      </repository>
-      </repositories>
-      
-      <!--<distributionManagement>
-      <repository>
-         <id>myMavenRepo.write</id>
-         <url>https://mymavenrepo.com/repo/eZX3rdgpo4tBZtWLgmwy/</url>
-      </repository>
-      </distributionManagement>-->
-   
-      
-	
+	<repositories>
+        <repository>
+            <id>myMavenRepo.read</id>
+            <url>https://mymavenrepo.com/repo/FN8PIshHk5uALNhkXbhs/</url>
+        </repository>
+    </repositories>
+
+    <distributionManagement>
+        <repository>
+            <id>myMavenRepo.write</id>
+            <url>https://mymavenrepo.com/repo/9Q8JoRpymi4UGK8HzbVq/</url>
+        </repository>
+    </distributionManagement>
 
 	<build>
 		<plugins>
+			<plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.1</version>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.19</version>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.junit.platform</groupId>
+                        <artifactId>junit-platform-surefire-provider</artifactId>
+                        <version>1.0.0-M3</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
